@@ -27,11 +27,13 @@ var descending = exports.descending = function descending(a, b) {
   return a > b ? -1 : a < b ? 1 : 0;
 };
 
-var sortBy = exports.sortBy = function sortBy(key, _ref) {
-  var _ref$ascending = _ref.ascending,
-      ascending = _ref$ascending === undefined ? true : _ref$ascending;
+var sortBy = exports.sortBy = function sortBy(key) {
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      _ref$descending = _ref.descending,
+      descending = _ref$descending === undefined ? false : _ref$descending;
+
   return function (a, b) {
-    return a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0;
+    return a[key] < b[key] ? descending ? 1 : -1 : a[key] > b[key] ? descending ? -1 : 1 : 0;
   };
 };
 

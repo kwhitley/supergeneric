@@ -1,23 +1,24 @@
 {
-  "name": "super-generic",
-  "version": "1.0.0",
+  "name": "supergeneric",
+  "version": "1.0.1",
   "scripts": {
     "lint": "eslint **/*.js",
-    "test": "nyc mocha $(find src -name '*.spec.js') --recursive --require babel-core/register",
+    "test": "nyc mocha $(find '../src' -name '*.spec.js') --recursive --require babel-core/register",
     "dev": "mocha $(find src -name '*.spec.js') --recursive --require babel-core/register --watch",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "prepublish": "npm run test",
     "prebuild": "rm -rf dist",
-    "build": "babel src --ignore '**/*.spec.js' --out-dir dist -d"
+    "build": "babel src --ignore '**/*.spec.js' --out-dir dist -d",
+    "postbuild": "cp package.json README.md dist/",
+    "postpublish": "cp package.json ../package.json"
   },
   "engines": {
     "node": ">=6.0.0"
   },
   "description": "Super-generic JS helper functions... formatters, math functions, sort functions, etc.",
-  "main": "./dist/super-generic.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kwhitley/super-generic.git"
+    "url": "https://github.com/kwhitley/supergeneric.git"
   },
   "keywords": [
     "math",
@@ -34,7 +35,7 @@
   "author": "Kevin R. Whitley <krwhitley@gmail.com> (http://krwhitley.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kwhitley/super-generic/issues",
+    "url": "https://github.com/kwhitley/supergeneric/issues",
     "email": "krwhitley@gmail.com"
   },
   "devDependencies": {

@@ -44,6 +44,37 @@ describe('super-generic/collections', () => {
     })
   })
 
+  describe('sortBy(key, options)', () => {
+    let items = [
+      { foo: 2 },
+      { foo: 4 },
+      { foo: 1 },
+      { foo: -1 },
+    ]
+
+    it('should sort an array of objects by key (within each object)', () => {
+      let byFoo = sortBy('foo')
+
+      expect(items.sort(byFoo)).to.eql([
+        { foo: -1 },
+        { foo: 1 },
+        { foo: 2 },
+        { foo: 4 },
+      ])
+    })
+
+    it('should sort in reverse if passed option { descending: true }', () => {
+      let byFoo = sortBy('foo', { descending: true })
+
+      expect(items.sort(byFoo)).to.eql([
+        { foo: 4 },
+        { foo: 2 },
+        { foo: 1 },
+        { foo: -1 },
+      ])
+    })
+  })
+
   describe('randomItem([values])', () => {
     it('should return a random item from within the set of values', () => {
       let values = [3,1,5,-1]
