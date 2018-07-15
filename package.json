@@ -1,0 +1,56 @@
+{
+  "name": "super-generic",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "nyc mocha $(find src -name '*.spec.js') --recursive --require babel-core/register",
+    "dev": "mocha $(find src -name '*.spec.js') --recursive --require babel-core/register --watch",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "npm run test",
+    "build": "rollup -c"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "description": "Super-generic JS helper functions... formatters, math functions, sort functions, etc.",
+  "main": "./dist/super-generic.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwhitley/super-generic.git"
+  },
+  "keywords": [
+    "math",
+    "sort",
+    "sorting",
+    "helper",
+    "functions",
+    "max",
+    "median",
+    "formatters",
+    "mad",
+    "sortby"
+  ],
+  "author": "Kevin R. Whitley <krwhitley@gmail.com> (http://krwhitley.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwhitley/super-generic/issues",
+    "email": "krwhitley@gmail.com"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.18.2",
+    "mocha": "^5.0.4",
+    "nyc": "^11.4.1",
+    "redux": "^4.0.0",
+    "redux-immutable": "^4.0.0",
+    "reselect": "^3.0.1",
+    "rollup": "^0.60.2",
+    "rollup-plugin-babel": "^3.0.4"
+  },
+  "dependencies": {}
+}
