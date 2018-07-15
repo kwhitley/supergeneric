@@ -1,76 +1,50 @@
 import { expect } from 'chai'
-import { min } from './math'
+import {
+  min,
+  max,
+  sum,
+  random,
+  round,
+  rounder,
+  mean,
+  stddev,
+  median,
+  mad
+} from './math'
 
-describe('math/min', function() {
-
-  it('reducer throws when no action passed', function() {
-    expect(todos.reducer).to.throw()
+describe('super-generic/math', () => {
+  describe('min([values])', () => {
+    it('should return minimum of array of values', () => {
+      expect(min([2,1,3])).to.equal(1)
+      expect(min([undefined,1,3])).to.equal(1)
+    })
   })
 
-  it('reducer delivers initialState if no matching action found', function() {
-    expect(todos.reducer(undefined, {})).to.equal(todosState)
+  describe('max([values])', () => {
+    it('should return minimum of array of values', () => {
+      expect(max([2,4,1,3])).to.equal(4)
+      expect(max([undefined,1,4,3])).to.equal(4)
+    })
   })
 
-  it('exports actions approporiately', function() {
-    expect(typeof todos.actions.addTodo).to.equal('function')
+  describe('sum([values])', () => {
+    it('should add an array of values', () => {
+      expect(sum([2,4,1,3])).to.equal(10)
+      expect(sum([undefined,2,4,1,3])).to.equal(10)
+    })
   })
 
-  it('actions creators create action objects', function() {
-    expect(todos.actions.addTodo('miffles')).to.eql({ type: 'ADD_TODO', text: 'miffles' })
+  describe('mean([values])', () => {
+    it('should average an array of values', () => {
+      expect(mean([2,4,1,3])).to.equal(10/4)
+      expect(mean([undefined,2,4,1,3])).to.equal(10/4)
+    })
   })
 
-  it('actions creators may be registered without a reducer (not sure why)', function() {
-    expect(todos.actions.missing()).to.eql({ type: 'MISSING' })
-  })
-
-  it('may register multiple action creators to a single reducer', function() {
-    expect(typeof todos.actions.setCategory).to.equal('function')
-    expect(typeof todos.actions.setCategoryFoo).to.equal('function')
-  })
-
-  it('reducer works as intended', function() {
-    let { addTodo, clearTodos } = todos.actions
-    let miffles = addTodo('miffles')
-    let vlad = addTodo('vlad')
-    let clearAction = clearTodos()
-    let state = { items: [], category: undefined }
-
-    state = todos.reducer(state, miffles)
-    expect(state.items).to.eql(['miffles'])
-
-    state = todos.reducer(state, vlad)
-    expect(state.items).to.eql(['miffles', 'vlad'])
-
-    state = todos.reducer(state, clearAction)
-    expect(state.items).to.eql([])
-  })
-
-  it('multiple actions sharing one reducer works as intended', function() {
-    let { setCategory, setCategoryFoo } = todos.actions
-    let state = { items: [], category: 'start' }
-
-    expect(state.category).to.equal('start')
-    expect(state.items).to.eql([])
-
-    state = todos.reducer(state, setCategory('cats'))
-    expect(state.category).to.equal('cats')
-
-    state = todos.reducer(state, setCategoryFoo())
-    expect(state.category).to.equal('foo')
-  })
-
-  it('maps actions onto root if no conflicts', function() {
-    expect(typeof todos.addTodo).to.equal('function')
-    expect(todos.addTodo).to.equal(todos.actions.addTodo)
-  })
-})
-
-describe('merge([ maps ]): object', function() {
-  let todos = automap(sampleConfig)
-  let merged = merge([ todos ])
-  console.log('merged', merged)
-
-  it('merges maps into { namespace: reducer(state, action) } format for use in rootReducer/combineReducers', function() {
-    expect(typeof merged.foo).to.equal('function')
+  describe('median([values])', () => {
+    it('should return median of array of values', () => {
+      expect(median([2,4,1,3,0])).to.equal(2)
+      expect(median([2,4,1,3,0,0])).to.equal(1.5)
+    })
   })
 })
