@@ -18,7 +18,7 @@ let exampleData = [
   }
 ]
 
-describe('super-generic/transform', () => {
+describe('supergeneric/transform', () => {
   describe('convert([values], fn1, fn2, ...)', () => {
     it('will return values (Array) with conversion fns applied', () => {
       let transformedDates = convert(exampleData, dates)

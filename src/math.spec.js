@@ -12,7 +12,7 @@ import {
   mad
 } from './math'
 
-describe('super-generic/math', () => {
+describe('supergeneric/math', () => {
   describe('min([values])', () => {
     it('should return minimum of array of values', () => {
       expect(min([2,1,3])).to.equal(1)

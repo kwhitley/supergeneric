@@ -9,7 +9,7 @@ import {
   last
 } from './collections'
 
-describe('super-generic/collections', () => {
+describe('supergeneric/collections', () => {
   describe('collections/first([values])', () => {
     it('should return first value of array', () => {
       expect(first([2,4,1,3])).to.equal(2)
