@@ -5,6 +5,7 @@
     "lint": "eslint **/*.js",
     "test": "nyc mocha $(find '../src' -name '*.spec.js') --recursive --require babel-core/register",
     "dev": "mocha $(find src -name '*.spec.js') --recursive --require babel-core/register --watch",
+    "docs": "jsdoc2md src/*.js > api.md",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "prebuild": "rm -rf dist",
     "build": "babel src --ignore '**/*.spec.js' --out-dir dist -d",
@@ -47,6 +48,7 @@
     "chai-datetime": "^1.5.0",
     "coveralls": "^3.0.0",
     "eslint": "^4.18.2",
+    "jsdoc-to-markdown": "^4.0.1",
     "mocha": "^5.0.4",
     "nyc": "^11.4.1"
   },

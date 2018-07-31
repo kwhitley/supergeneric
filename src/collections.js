@@ -1,20 +1,53 @@
 import { random } from './math'
 
-// first(array) --> returns first value in array
+/**
+ * returns first value in array
+ * @exports collections/first
+ * @param {array} values - an array of values/objects
+ */
 export const first = (values) => values[0]
 
-// last(array) --> returns last value in array
+/**
+ * returns last value in array
+ * @exports collections/last
+ * @param {array} values - an array of values/objects
+ */
 export const last = (values) => values[values.length-1]
 
-// sort helper function (e.g. values.sort(ascending))
+/**
+ * ascending sort function.  Example: myArray.sort(ascending)
+ * @exports collections/ascending
+ */
 export const ascending = (a, b) => a < b ? -1 : (a > b ? 1 : 0)
 
-// sort helper function (e.g. values.sort(descending))
+/**
+ * Descending sort function.  Example: myArray.sort(descending)
+ * @exports collections/descending
+ */
 export const descending = (a, b) => a > b ? -1 : (a < b ? 1 : 0)
 
+/**
+ * sorts by a predefined key.
+ * @exports collections/sortBy
+ * @example
+ * people.sort(sortBy('name'))
+ * @param {string} key - attribute name for object sorting
+ * @param {boolean} descending - set to true for descending sort
+ * @returns {array} sorted by attribute @name
+ */
 export const sortBy = (key, { descending = false } = {}) =>
   (a, b) => a[key] < b[key] ? (descending ? 1 : -1) : (a[key] > b[key] ? (descending ? -1 : 1) : 0)
 
+/**
+ * returns only the numeric values of an array
+ * @exports collections/onlyNumbers
+ * @param {array} values - an array of values
+ */
 export const onlyNumbers = (values) => values.filter(v => typeof v === 'number' && !isNaN(Number(v)))
 
+/**
+ * returns a random entry from an array
+ * @exports collections/randomItem
+ * @param {array} items - an array of values/objects
+ */
 export const randomItem = (items) => items[random(0, items.length-1)]
