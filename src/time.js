@@ -8,7 +8,14 @@ var timeUnits = {
   month:        3600000 * 24 * 30,
 }
 
-// getMilliseconds(duration) --> converts string representation to ms (e.g. '2 minutes' => 1000 * 60 * 2)
+/**
+ * converts text durations (e.g. "2 minutes") to milliseconds
+ * @exports time/getMilliseconds
+ * @example
+ * getMilliseconds('2 minutes') // 120000
+ * @param {string | number} duration - will leave numeric values alone but convert string values
+ * @returns {number} milliseconds
+ */
 export const getMilliseconds = (duration) => {
   if (!['string', 'number'].includes(typeof duration)) {
     throw new Error('getMilliseconds(duration) expects a string or number input')
