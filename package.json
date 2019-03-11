@@ -1,5 +1,5 @@
 {
-  "name": "supergeneric",
+  "name": "@supergeneric/utils",
   "version": "1.1.0",
   "scripts": {
     "lint": "eslint **/*.js",
@@ -9,8 +9,9 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "prebuild": "rm -rf dist",
     "build": "babel src --ignore '**/*.spec.js' --out-dir dist -d",
-    "postbuild": "cp package.json README.md dist/",
-    "postpublish": "cp package.json ../package.json"
+    "release:major": "yarn build && release --major --src=dist --verbose --test --nocleanup",
+    "release:minor": "yarn build && release --minor --src=dist --verbose --test --nocleanup",
+    "release:patch": "yarn build && release --patch --src=dist --verbose --test --nocleanup"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -40,6 +41,7 @@
     "email": "krwhitley@gmail.com"
   },
   "devDependencies": {
+    "@supergeneric/yarn-release": "^1.0.7",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
