@@ -1,22 +1,18 @@
 {
-  "name": "@supergeneric/utils",
-  "version": "1.1.6",
+  "name": "supergeneric",
+  "version": "2.0.0",
   "scripts": {
-    "lint": "eslint **/*.js",
-    "test": "nyc mocha $(find '../src' -name '*.spec.js') --recursive --require babel-core/register",
-    "dev": "mocha $(find src -name '*.spec.js') --recursive --require babel-core/register --watch",
-    "docs": "jsdoc2md src/*.js > api.md",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "prebuild": "rm -rf build",
-    "build": "babel src --ignore '**/*.spec.js' --out-dir build -d",
-    "release:major": "yarn build && release --major --src=build",
-    "release:minor": "yarn build && release --minor --src=build",
-    "release:patch": "yarn build && release --patch --src=build"
+    "lint": "npx eslint src",
+    "test": "yarn lint && jest --verbose --coverage src",
+    "verify": "echo 'verifying module...' && yarn build && yarn test",
+    "dev": "yarn lint && jest --verbose --watch src",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "prerelease": "yarn verify",
+    "prebuild": "rimraf dist",
+    "build": "terser-folder src -eo dist --pattern '**/*.js,!**/*spec.js' -x .js",
+    "release": "release --tag --push --src=dist"
   },
-  "engines": {
-    "node": ">=6.0.0"
-  },
-  "description": "Super-generic JS helper functions... formatters, math functions, sort functions, etc.",
+  "description": "Supergeneric JS helper functions... formatters, math functions, sort functions, etc.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -41,18 +37,20 @@
     "email": "krwhitley@gmail.com"
   },
   "devDependencies": {
-    "@kwhitley/yarn-release": "^1.2.0",
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/preset-env": "^7.0.0",
-    "chai": "^4.1.2",
-    "chai-datetime": "^1.5.0",
-    "coveralls": "^3.0.0",
-    "eslint": "^4.18.2",
-    "jsdoc-to-markdown": "^4.0.1",
-    "mocha": "^5.0.4",
-    "nyc": "^11.4.1"
+    "@babel/preset-env": "^7.16.0",
+    "babel-jest": "^27.3.1",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.1.0",
+    "eslint-plugin-jest": "^25.2.2",
+    "jest": "^27.3.1",
+    "rimraf": "^3.0.2",
+    "terser": "^5.9.0",
+    "terser-folder": "^2.0.0",
+    "yarn-release": "^1.10.3"
   },
-  "dependencies": {}
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  }
 }
