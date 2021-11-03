@@ -54,7 +54,7 @@ module.exports = {
       'curly': 'off',
       'default-case': 'error',
       'default-case-last': 'error',
-      'default-param-last': 'error',
+      'default-param-last': 'off',
       'dot-location': [
           'error',
           'property'
@@ -112,7 +112,7 @@ module.exports = {
       'no-alert': 'error',
       'no-array-constructor': 'error',
       'no-await-in-loop': 'off',
-      'no-bitwise': 'error',
+      'no-bitwise': 'off',
       'no-buffer-constructor': 'error',
       'no-caller': 'error',
       'no-catch-shadow': 'error',
@@ -159,7 +159,7 @@ module.exports = {
       'no-octal-escape': 'error',
       'no-param-reassign': 'off',
       'no-path-concat': 'error',
-      'no-plusplus': 'error',
+      'no-plusplus': 'off',
       'no-process-env': 'error',
       'no-process-exit': 'error',
       'no-proto': 'error',
