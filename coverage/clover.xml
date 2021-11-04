@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636002036252" clover="3.2.0">
-  <project timestamp="1636002036252" name="All files">
+<coverage generated="1636006428506" clover="3.2.0">
+  <project timestamp="1636006428506" name="All files">
     <metrics statements="73" coveredstatements="69" conditionals="53" coveredconditionals="42" methods="24" coveredmethods="23" elements="150" coveredelements="134" complexity="0" loc="73" ncloc="73" packages="1" files="20" classes="20"/>
-    <file name="ascending.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/ascending.js">
+    <file name="ascending.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/ascending.js">
       <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <line num="2" count="26" type="cond" truecount="2" falsecount="0"/>
     </file>
-    <file name="average.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/average.js">
+    <file name="average.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/average.js">
       <metrics statements="1" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="4" count="1" type="cond" truecount="0" falsecount="1"/>
     </file>
-    <file name="binarySearch.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/binarySearch.js">
+    <file name="binarySearch.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/binarySearch.js">
       <metrics statements="14" coveredstatements="14" conditionals="10" coveredconditionals="8" methods="2" coveredmethods="2"/>
       <line num="3" count="1" type="stmt"/>
       <line num="7" count="1" type="cond" truecount="0" falsecount="1"/>
@@ -27,29 +27,29 @@
       <line num="30" count="1018" type="stmt"/>
       <line num="33" count="1" type="stmt"/>
     </file>
-    <file name="convert.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/convert.js">
+    <file name="convert.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/convert.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
       <line num="8" count="1" type="stmt"/>
     </file>
-    <file name="dates.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/dates.js">
+    <file name="dates.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/dates.js">
       <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <line num="2" count="2" type="stmt"/>
       <line num="3" count="8" type="stmt"/>
       <line num="4" count="8" type="cond" truecount="2" falsecount="0"/>
       <line num="6" count="8" type="cond" truecount="2" falsecount="0"/>
     </file>
-    <file name="descending.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/descending.js">
+    <file name="descending.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/descending.js">
       <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <line num="2" count="6" type="cond" truecount="2" falsecount="0"/>
     </file>
-    <file name="first.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/first.js">
+    <file name="first.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/first.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
     </file>
-    <file name="getMilliseconds.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/getMilliseconds.js">
+    <file name="getMilliseconds.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/getMilliseconds.js">
       <metrics statements="17" coveredstatements="14" conditionals="14" coveredconditionals="9" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
@@ -69,15 +69,15 @@
       <line num="36" count="3" type="cond" truecount="2" falsecount="2"/>
       <line num="39" count="0" type="stmt"/>
     </file>
-    <file name="last.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/last.js">
+    <file name="last.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/last.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
     </file>
-    <file name="max.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/max.js">
+    <file name="max.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/max.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
     </file>
-    <file name="median.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/median.js">
+    <file name="median.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/median.js">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="2" type="stmt"/>
@@ -86,29 +86,29 @@
       <line num="8" count="1" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
     </file>
-    <file name="min.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/min.js">
+    <file name="min.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/min.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
     </file>
-    <file name="numbers.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/numbers.js">
+    <file name="numbers.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/numbers.js">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="3" type="stmt"/>
       <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
     </file>
-    <file name="onlyNumbers.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/onlyNumbers.js">
+    <file name="onlyNumbers.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/onlyNumbers.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
     </file>
-    <file name="random.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/random.js">
+    <file name="random.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/random.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
     </file>
-    <file name="randomItem.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/randomItem.js">
+    <file name="randomItem.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/randomItem.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="4" count="1" type="stmt"/>
     </file>
-    <file name="recurse.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/recurse.js">
+    <file name="recurse.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/recurse.js">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <line num="1" count="2" type="stmt"/>
       <line num="2" count="2" type="cond" truecount="2" falsecount="0"/>
@@ -117,17 +117,17 @@
       <line num="7" count="5" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
     </file>
-    <file name="required.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/required.js">
+    <file name="required.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/required.js">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="0" type="stmt"/>
     </file>
-    <file name="sortBy.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/sortBy.js">
+    <file name="sortBy.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/sortBy.js">
       <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="8" methods="2" coveredmethods="2"/>
       <line num="10" count="1" type="cond" truecount="2" falsecount="0"/>
       <line num="11" count="9" type="cond" truecount="2" falsecount="0"/>
     </file>
-    <file name="sum.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/utils/src/sum.js">
+    <file name="sum.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/sum.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="2" type="stmt"/>
       <line num="3" count="2" type="stmt"/>
