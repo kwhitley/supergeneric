@@ -1,4 +1,4 @@
-import { randomItem } from './random'
+import { randomItem } from './randomItem'
 
 // creates a hash of length (length).
 export const generateHash = (length = 6) => {
