@@ -33,7 +33,26 @@ import { sum } from 'supergeneric'
   ```js
   average([7, 1, 4, 2]) // 3.5
   ```
-- **binarySearch**
+- **binarySearch(items: any[], by?: function) => (target: any): object** - binary searches through **items**, using the **by** function as a value getter, or the item itself.  Assumes the items are already ascendingly-sorted (on the value itself or the value of the **by** function).  Returns `{ item, index }`.  No recursion used for low memory overhead, and finds items in very few steps.  Saves more time the bigger the length of **items**.
+  ```js
+  const doubles = Array(1000)
+                    .fill(0)
+                    .map((v, i) => i * 2)
+
+  const searchDoubles = binarySearch(doubles) // save a reference to the search
+
+  searchDoubles(4) // { item: 4, index: 2 }
+  searchDoubles(3) // undefined
+
+  // more complex using a by function
+  const complex = Array(1000)
+                    .fill(0)
+                    .map((v, i) => ({ value: i * 2 }))
+
+  const searchComplex = binarySearch(complex, item => item.value)
+
+  searchComplex(4) // { item: { value: 4 }, index: 2 }
+  ```
 - **console** - a color-injected version of `window.console`.  Only the first argument (string) will be colored... the rest will be left alone.
   ```js
   console.magenta('foo', 'bar') // foo bar (foo in magenta text)
@@ -179,6 +198,7 @@ import { sum } from 'supergeneric'
   ```
 - **stddev(values: number[]): number** - returns the standard deviation of **values**.
   ```js
+  stddev([7, 4, 2, 1]) // 2.6457513110645907
   ```
 - **sum(values: number[]): number** - returns the sum of **values**
   ```js
