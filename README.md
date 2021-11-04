@@ -64,18 +64,50 @@ import { sum } from 'supergeneric'
   generateHash()  // RUaLy4
   generateHash(4) // w9Y7
   ```
-- **getMilliseconds**
+- **getMilliseconds(duration: string): number** - returns numeric milliseconds (for duration math) from a string duration.  Duration is case insensitive, and accepts singular or plural versions.  Numbers are ignored and passed-through.
+  ```js
+  getMilliseconds(131)          // 131
+  getMilliseconds('1 second')   // 1000
+  getMilliseconds('4 minutes')  // 1000 * 60 * 4
+  getMilliseconds('2 days')     // 1000 * 60 * 60 * 24 * 2
+  getMilliseconds('1 WEEK')     // 1000 * 60 * 60 * 24 * 7
+  ```
 - **last** - last element in an array
   ```js
   last([7, 1, 4, 2]) // 2
   ```
-- **mad**
-- **makePath**
+- **makePath(...segments: any, options:? object): string** - joins segments with default delimiter of '/', removing empty sections and duplicate delimiters.  Accepts a single option `{ delimiter: '|' }` to modify the delimiter.
+  ```js
+  makePath('foo', 'bar', 'baz')                       // foo/bar/baz
+  makePath('foo', undefined, 13)                      // foo/13
+  makePath('foo/', undefined, 13)                     // foo/13
+  makePath('foo', 'bar', 'baz', { delimiter: '.' })   // foo.bar.baz
+  ```
 - **max(values: number[]): number** - returns the largest number in **values**, shorthand for `Math.max(...values)`
   ```js
   max([7, 1, 4, 2]) // 7
   ```
-- **median**
+- **mean(values: number[]): number** - returns the average of an array of numbers (alias for **average(values: number[]): number**).
+  ```js
+  mean([7, 1, 4, 2]) // 3.5
+  ```
+- **median(values: number[], sortBy?: function): number** - returns the median value from an array of items.
+  ```js
+  median([2, 4, 1, 3, 0])     // 2
+  median([2, 4, 1, 3, 0, 0])  // 1.5
+
+  // or with a sorter function for objects
+  const items = [
+    { foo: 2 },
+    { foo: 4 },
+    { foo: 1 },
+    { foo: -1 },
+  ]
+
+  const byFoo = sortBy('foo')
+
+  median(items, byFoo) // { foo: 1 }
+  ```
 - **merge(...items: object[]): object** - merges all **items**, shorthand for `Object.merge(...items)`
   ```js
   merge({ age: 1 }, { name: 'Mittens' }) // { age: 1, name: 'Mittens' }
@@ -110,6 +142,7 @@ import { sum } from 'supergeneric'
   randomItem('foobarbaz')    // a
   randomItem([8, 7, 4, 1])   // 7
   ```
+- **recurse** - it's a secret.
 - **required(message: string): Error** - throws an error with **message** if called.  Useful for assigning default values to this to force entry.
   ```js
   const foo(bar = required('bar is a required option of foo(bar)')) => `foo:${bar}:baz`
@@ -128,8 +161,25 @@ import { sum } from 'supergeneric'
 
   [67.14, 16.88, 1.16].map(roundTo1Decimal) // [67.1, 16.9, 1.2]
   ```
-- **sortBy**
-- **stddev**
+- **sortBy(key: string|function, options?: object)** - sorting function that sorts by key (attribute name as string, or item function), and accepts a single option of `{ descending: true }` for reverse sorting.
+  ```js
+  const items = [
+    { foo: 2 },
+    { foo: 1 },
+    { foo: -1 },
+  ]
+
+  const foo = item => item.foo
+  const byFoo = sortBy('foo')
+  const byFoo2 = sortBy(foo)
+
+  items.sort(byFoo).map(foo)                        // [-1, 1, 2]
+  items.sort(byFoo2).map(foo)                       // [-1, 1, 2]
+  items.sort(byFoo, { descending: true }).map(foo)  // [2, 1, -1]
+  ```
+- **stddev(values: number[]): number** - returns the standard deviation of **values**.
+  ```js
+  ```
 - **sum(values: number[]): number** - returns the sum of **values**
   ```js
   sum([7, 1, 4, 2]) // 14

@@ -1,6 +1,8 @@
+import { average } from './average'
+
 // s = sqrt(sum((x - m)^2)/(n - 1))
 export const stddev = values => {
-  const m = mean(values)
+  const m = average(values)
   const n = values.length
   let sumerror = 0
 

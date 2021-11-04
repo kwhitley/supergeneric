@@ -7,19 +7,17 @@
  * @param {boolean} descending - set to true for descending sort
  * @returns {array} sorted by attribute @name
  */
- export const sortBy = (key, { descending = false } = {}) =>
-  (a, b) => a[key] < b[key]
-            ? (
-                descending
+export const sortBy = (key, { descending = false } = {}) => {
+  const less = descending
                 ? 1
                 : -1
-              )
-            : (
-                a[key] > b[key]
-                ? (
-                    descending
-                    ? -1
-                    : 1
-                  )
-                : 0
-              )
+  const more = less * -1
+
+  return typeof key === 'function'
+          ? (a, b) => key(a) < key(b)
+                      ? less
+                      : more
+          : (a, b) => a[key] < b[key]
+                      ? less
+                      : more
+}

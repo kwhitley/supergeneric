@@ -16,7 +16,7 @@ export const getMilliseconds = duration => {
 
   const asNumber = Number(duration)
 
-  if (!isNaN(asNumber)) {
+  if (Number.isFinite(asNumber)) {
     return asNumber
   }
 

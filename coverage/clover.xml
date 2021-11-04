@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636006649077" clover="3.2.0">
-  <project timestamp="1636006649077" name="All files">
-    <metrics statements="73" coveredstatements="69" conditionals="53" coveredconditionals="42" methods="24" coveredmethods="23" elements="150" coveredelements="134" complexity="0" loc="73" ncloc="73" packages="1" files="20" classes="20"/>
+<coverage generated="1636056926827" clover="3.2.0">
+  <project timestamp="1636056926828" name="All files">
+    <metrics statements="93" coveredstatements="89" conditionals="61" coveredconditionals="51" methods="28" coveredmethods="27" elements="182" coveredelements="167" complexity="0" loc="93" ncloc="93" packages="1" files="23" classes="23"/>
     <file name="ascending.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/ascending.js">
       <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <line num="2" count="26" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="average.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/average.js">
       <metrics statements="1" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="4" count="1" type="cond" truecount="0" falsecount="1"/>
+      <line num="4" count="4" type="cond" truecount="0" falsecount="1"/>
     </file>
     <file name="binarySearch.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/binarySearch.js">
       <metrics statements="14" coveredstatements="14" conditionals="10" coveredconditionals="8" methods="2" coveredmethods="2"/>
@@ -71,20 +71,35 @@
     </file>
     <file name="last.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/last.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
+      <line num="2" count="5" type="stmt"/>
+    </file>
+    <file name="makePath.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/makePath.js">
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="4" type="stmt"/>
+      <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="14" count="12" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="max.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/max.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
     </file>
+    <file name="mean.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/mean.js">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+    </file>
     <file name="median.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/median.js">
-      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="4" count="2" type="stmt"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
+      <line num="4" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="3" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
+      <line num="7" count="3" type="stmt"/>
+      <line num="9" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="13" count="2" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="min.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/min.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -123,17 +138,31 @@
       <line num="3" count="0" type="stmt"/>
     </file>
     <file name="sortBy.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/sortBy.js">
-      <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="8" methods="2" coveredmethods="2"/>
-      <line num="10" count="1" type="cond" truecount="2" falsecount="0"/>
-      <line num="11" count="9" type="cond" truecount="2" falsecount="0"/>
+      <metrics statements="6" coveredstatements="6" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="16" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="3" type="cond" truecount="1" falsecount="1"/>
+      <line num="20" count="15" type="cond" truecount="2" falsecount="0"/>
+    </file>
+    <file name="stddev.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/stddev.js">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
     </file>
     <file name="sum.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/sum.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="2" type="stmt"/>
-      <line num="3" count="2" type="stmt"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="6" count="8" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
+      <line num="2" count="4" type="stmt"/>
+      <line num="3" count="5" type="stmt"/>
+      <line num="5" count="5" type="stmt"/>
+      <line num="6" count="20" type="stmt"/>
+      <line num="9" count="5" type="stmt"/>
     </file>
   </project>
 </coverage>
