@@ -1,127 +1,29 @@
 supergeneric
 =======
-#### supergeneric helper functions
-
 [![npm version](https://badge.fury.io/js/supergeneric.svg)](https://www.npmjs.com/package/supergeneric)
-[![node version support](https://img.shields.io/node/v/supergeneric.svg)](https://www.npmjs.com/package/supergeneric)
-[![Build Status via Travis CI](https://travis-ci.org/kwhitley/supergeneric.svg?branch=master)](https://travis-ci.org/kwhitley/supergeneric)
-[![Coverage Status](https://coveralls.io/repos/github/kwhitley/supergeneric/badge.svg?branch=master)](https://coveralls.io/github/kwhitley/supergeneric?branch=master)
-[![NPM downloads](https://img.shields.io/npm/dt/supergeneric.svg?style=flat-square)](https://www.npmjs.com/package/supergeneric)
 
-## Modules
+Just a collection of my favorite bespoke functions that I manage to work into nearly every project.  Added to NPM for my convenience (and yours, if you happen to use it)!
 
-<dl>
-<dt><a href="#module_collections/first">collections/first</a> ⇒ <code>object</code></dt>
-<dd><p>returns first value in array</p>
-</dd>
-<dt><a href="#module_collections/last">collections/last</a> ⇒ <code>object</code></dt>
-<dd><p>returns last value in array</p>
-</dd>
-<dt><a href="#module_collections/ascending">collections/ascending</a> ⇒ <code>function</code></dt>
-<dd><p>ascending sort function.  Example: myArray.sort(ascending)</p>
-</dd>
-<dt><a href="#module_collections/descending">collections/descending</a> ⇒ <code>function</code></dt>
-<dd><p>Descending sort function.  Example: myArray.sort(descending)</p>
-</dd>
-<dt><a href="#module_collections/sortBy">collections/sortBy</a> ⇒ <code>array</code></dt>
-<dd><p>sorts by a predefined key.</p>
-</dd>
-<dt><a href="#module_collections/onlyNumbers">collections/onlyNumbers</a> ⇒ <code>array</code></dt>
-<dd><p>returns only the numeric values of an array</p>
-</dd>
-<dt><a href="#module_collections/randomItem">collections/randomItem</a> ⇒ <code>object</code></dt>
-<dd><p>returns a random entry from an array</p>
-</dd>
-<dt><a href="#module_time/getMilliseconds">time/getMilliseconds</a> ⇒ <code>number</code></dt>
-<dd><p>converts text durations (e.g. &quot;2 minutes&quot;) to milliseconds</p>
-</dd>
-</dl>
 
-<a name="module_collections/first"></a>
+### Importing
 
-## collections/first ⇒ <code>object</code>
-returns first value in array
-
-**Returns**: <code>object</code> - first value/object in an array
-
-| Param | Type | Description |
-| --- | --- | --- |
-| values | <code>array</code> | an array of values/objects |
-
-<a name="module_collections/last"></a>
-
-## collections/last ⇒ <code>object</code>
-returns last value in array
-
-**Returns**: <code>object</code> - last value/object in an array
-
-| Param | Type | Description |
-| --- | --- | --- |
-| values | <code>array</code> | an array of values/objects |
-
-<a name="module_collections/ascending"></a>
-
-## collections/ascending ⇒ <code>function</code>
-ascending sort function.  Example: myArray.sort(ascending)
-
-**Returns**: <code>function</code> - ascending sort function
-<a name="module_collections/descending"></a>
-
-## collections/descending ⇒ <code>function</code>
-Descending sort function.  Example: myArray.sort(descending)
-
-**Returns**: <code>function</code> - descending sort function
-<a name="module_collections/sortBy"></a>
-
-## collections/sortBy ⇒ <code>array</code>
-sorts by a predefined key.
-
-**Returns**: <code>array</code> - sorted by attribute @name
-
-| Param | Type | Description |
-| --- | --- | --- |
-| key | <code>string</code> | attribute name for object sorting |
-| descending | <code>boolean</code> | set to true for descending sort |
-
-**Example**
 ```js
-people.sort(sortBy('name'))
+import { sum } from 'supergeneric'
+
+// or for the tree-shaking minimalists...
+import { sum } from 'supergeneric/sum'
 ```
-<a name="module_collections/onlyNumbers"></a>
 
-## collections/onlyNumbers ⇒ <code>array</code>
-returns only the numeric values of an array
-
-**Returns**: <code>array</code> - only numeric values
-
-| Param | Type | Description |
-| --- | --- | --- |
-| values | <code>array</code> | an array of values |
-
-<a name="module_collections/randomItem"></a>
-
-## collections/randomItem ⇒ <code>object</code>
-returns a random entry from an array
-
-**Returns**: <code>object</code> - random value/object from array of values/objects
-
-| Param | Type | Description |
-| --- | --- | --- |
-| items | <code>array</code> | an array of values/objects |
-
-<a name="module_time/getMilliseconds"></a>
-
-## time/getMilliseconds ⇒ <code>number</code>
-converts text durations (e.g. "2 minutes") to milliseconds
-
-**Returns**: <code>number</code> - milliseconds
-
-| Param | Type | Description |
-| --- | --- | --- |
-| duration | <code>string</code> \| <code>number</code> | will leave numeric values alone but convert string values |
-
-**Example**
+### Migrating from v1.x to v2.x
+Previously, functions were grouped into collections, such as `import { sum } from 'supergeneric/math'`.  This is no longer the case.  All functions are named exports from the base module, or may be referenced directly by name (e.g. "supergeneric/sum").
 ```js
-getMilliseconds('2 minutes') // 120000
+// version 1.x
+import { sum } from 'supergeneric/math'
+
+// version 2.x
+import { sum } from 'supergeneric'
 ```
+
+# API
+
 
