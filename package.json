@@ -1,6 +1,6 @@
 {
   "name": "supergeneric",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "scripts": {
     "lint": "npx eslint src",
     "test": "yarn lint && jest --verbose --coverage src",

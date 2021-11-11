@@ -13,5 +13,5 @@ export const cyan = colored('#0dd')
 export const purple = colored('purple')
 export const grey = colored('#ccc')
 
-export const console = Object.assign(window.console, { magenta, green, blue, red, orange, teal, cyan, purple, grey })
+export const console = Object.assign(console, { magenta, green, blue, red, orange, teal, cyan, purple, grey })
 
