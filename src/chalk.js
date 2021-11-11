@@ -1,3 +1,6 @@
+const globalObject = global || {}
+const existingConsole = globalObject.console || globalObject.window?.console || {}
+
 export const colored = color =>
   (arg1, ...other) => typeof arg1 === 'string'
                       ? console.log(`%c${arg1}`, `color: ${color};`, ...other)
@@ -13,5 +16,5 @@ export const cyan = colored('#0dd')
 export const purple = colored('purple')
 export const grey = colored('#ccc')
 
-export const console = Object.assign(console, { magenta, green, blue, red, orange, teal, cyan, purple, grey })
+export const console = Object.assign(existingConsole, { magenta, green, blue, red, orange, teal, cyan, purple, grey })
 
