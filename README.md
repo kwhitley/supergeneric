@@ -161,6 +161,11 @@ import { sum } from 'supergeneric'
   randomItem('foobarbaz')    // a
   randomItem([8, 7, 4, 1])   // 7
   ```
+- **range(length: number, options?: object): number[]** - returns an Array of **length**, filled by the range values, starting at 0.  Accepts one option, `from: number` to change the starting value.
+  ```js
+  range(5)                  // [0, 1, 2, 3, 4]
+  range(5, { from: 1 })     // [1, 2, 3, 4, 5]
+  ```
 - **recurse** - it's a secret.
 - **required(message: string): Error** - throws an error with **message** if called.  Useful for assigning default values to this to force entry.
   ```js
