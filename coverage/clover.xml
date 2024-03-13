@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710307877692" clover="3.2.0">
-  <project timestamp="1710307877692" name="All files">
+<coverage generated="1710308875895" clover="3.2.0">
+  <project timestamp="1710308875895" name="All files">
     <metrics statements="97" coveredstatements="93" conditionals="64" coveredconditionals="53" methods="33" coveredmethods="32" elements="194" coveredelements="178" complexity="0" loc="97" ncloc="97" packages="1" files="25" classes="25"/>
     <file name="ascending.js" path="/Users/kevinwhitley/dev/kwhitley/supergeneric/src/ascending.js">
       <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
