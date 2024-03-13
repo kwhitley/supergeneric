@@ -105,7 +105,7 @@ module.exports = {
       'max-len': 'off',
       'max-nested-callbacks': 'error',
       'max-params': 'error',
-      'multiline-ternary': 'error',
+      'multiline-ternary': 'off',
       'new-parens': 'error',
       'newline-before-return': 'error',
       'newline-per-chained-call': 'error',
@@ -224,7 +224,7 @@ module.exports = {
       'prefer-regex-literals': 'error',
       'prefer-rest-params': 'error',
       'prefer-spread': 'error',
-      'prefer-template': 'error',
+      'prefer-template': 'off',
       'quote-props': 'off',
       'quotes': [
           'error',
