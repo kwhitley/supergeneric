@@ -1,14 +1,13 @@
 import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
-import { globby } from 'globby'
 import bundleSize from 'rollup-plugin-bundle-size'
-import copy from 'rollup-plugin-copy'
 import fs from 'fs-extra'
 
 // scan files to build
-const files = (await globby('./src/*.(ts|js)', {
-  ignore: ['**/*.spec.ts', 'examples'],
-})).map(path => ({
+const files = fs.readdirSync('./src')
+  .filter(file => file.endsWith('.ts') && !file.includes('.spec.'))
+  .map(file => `./src/${file}`)
+  .map(path => ({
   path,
   shortPath: path.replace(/(\/src)|(\.ts)/g, '').replace('./index', '.'),
   esm: path.replace('/src/', '/dist/').replace('.ts', '.mjs'),
@@ -33,7 +32,8 @@ pkg.exports = files.reduce((acc, file) => {
 // write updated package.json
 await fs.writeJSON('./package.json', pkg, { spaces: 2 })
 
-export default files.map(file => ({
+export default async () => {
+  return files.map(file => ({
     input: file.path,
     output: [
       {
@@ -49,14 +49,7 @@ export default files.map(file => ({
       typescript({ sourceMap: false }),
       terser(),
       bundleSize(),
-      copy({
-        targets: [
-          {
-            src: ['LICENSE'],
-            dest: 'dist',
-          },
-        ],
-      }),
     ],
   }))
+}
 

@@ -18,7 +18,7 @@
       "strict": true,
       "traceResolution": false,
       "types": ["node"],
-      "module": "commonjs",
+      "module": "esnext",
       "outDir": "dist",
       "target": "es2015"
   },
