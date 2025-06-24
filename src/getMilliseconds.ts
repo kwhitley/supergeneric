@@ -1,4 +1,4 @@
-const UNITS = {
+const UNITS: Record<string, number> = {
   ms: 1,
   second: 1000,
   minute: 60000,
@@ -9,7 +9,7 @@ const UNITS = {
 }
 
 // converts text durations (e.g. "2 minutes") to milliseconds
-export const getMilliseconds = duration => {
+export const getMilliseconds = (duration: string | number): number => {
   if (!['string', 'number'].includes(typeof duration)) {
     throw new Error('getMilliseconds(duration) expects a string or number input')
   }
@@ -26,9 +26,9 @@ export const getMilliseconds = duration => {
 
   const split = duration.match(/^([\d\.,]+)\s?(\w+)$/)
 
-  if (split.length === 3) {
-    const len = parseFloat(split[1])
-    let unit = split[2].replace(/s$/i, '').toLowerCase()
+  if (split && split.length === 3) {
+    const len = parseFloat(split[1]!)
+    let unit = split[2]!.replace(/s$/i, '').toLowerCase()
     if (unit === 'm') {
       unit = 'ms'
     }

@@ -4,8 +4,8 @@ const MAX_ITERATIONS = 1000
 
 // searches for an item in a sorted array, and returns { item, index }
 // signature: binarySearch(values:any[])(target:string|number, by?:function): object
-export const binarySearch = (values = required('must include values'), by) =>
-  (target = required('must include a target')) => {
+export const binarySearch = <T>(values: T[] = required('must include values'), by?: (item: T) => any) =>
+  (target: any = required('must include a target')): { item: T; index: number } | undefined => {
     let lower = 0
     let upper = values.length
     let midpoint

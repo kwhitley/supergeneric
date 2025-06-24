@@ -1,8 +1,8 @@
 import { last } from './last'
 
 // makes a slash "/" delimited path from a list of string/numeric params
-export const makePath = (...targets) => {
-  let delimiter = last(targets)?.delimiter
+export const makePath = (...targets: any[]): string => {
+  let delimiter = (last(targets) as any)?.delimiter
 
   if (delimiter) {
     targets.pop()

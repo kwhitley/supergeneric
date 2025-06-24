@@ -1,5 +1,5 @@
 // Descending sort function.  Example: myArray.sort(descending)
- export const descending = (a, b) => a > b
+ export const descending = (a: any, b: any): number => a > b
                                     ? -1
                                     : (
                                         a < b
