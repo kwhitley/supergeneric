@@ -1,5 +1,5 @@
 // round(value:number, precision?:number): number
-export const round = (value, precision = 0) => {
+export const round = (value: number, precision: number = 0): number => {
   const mult = 10 ** precision
 
   return Math.round(value * mult) / mult

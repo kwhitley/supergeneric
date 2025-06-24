@@ -1,8 +1,6 @@
 export * from './ascending'
 export * from './average'
 export * from './binarySearch'
-export * from './chalk'
-export { chalk as console } from './chalk'
 export * from './convert'
 export * from './dates'
 export * from './descending'

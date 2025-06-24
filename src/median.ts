@@ -1,6 +1,6 @@
 import { ascending } from './ascending'
 
-export const median = (values, sortBy) => {
+export const median = (values: any[], sortBy?: (a: any, b: any) => number): any => {
   const sorted = [ ...values].sort(sortBy || ascending)
   const mid = Math.floor(sorted.length / 2)
   const item = sorted[mid]

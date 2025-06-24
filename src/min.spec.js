@@ -1,4 +1,5 @@
 import { min } from './min'
+import { describe, it, expect } from 'bun:test'
 
 describe('min([values])', () => {
   it('should return minimum of array of values', () => {

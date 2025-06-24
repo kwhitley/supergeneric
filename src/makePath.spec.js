@@ -1,4 +1,5 @@
 import { makePath } from './makePath'
+import { describe, it, expect } from 'bun:test'
 
 describe('makePath(...paths: any, options?: object): string', () => {
   it('should join paths (with default delimiter of /', () => {

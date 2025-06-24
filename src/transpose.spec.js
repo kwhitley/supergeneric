@@ -1,4 +1,5 @@
 import { transpose } from './transpose'
+import { describe, it, expect } from 'bun:test'
 
 describe('transpose(arr2d: array[])', () => {
   it('should add an array of values', () => {

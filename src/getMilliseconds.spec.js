@@ -1,4 +1,5 @@
 import { getMilliseconds } from './getMilliseconds'
+import { describe, it, expect } from 'bun:test'
 
 describe('getMilliseconds(duration: string|number): number', () => {
   it('should leave numeric values alone (assumes millisecond input)', () => {

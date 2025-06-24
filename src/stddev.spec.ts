@@ -1,4 +1,5 @@
 import { stddev } from './stddev'
+import { describe, it, expect } from 'bun:test'
 
 describe('stddev(values: number[]): number', () => {
   it('should return the standard deviation of values', () => {

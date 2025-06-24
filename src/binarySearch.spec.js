@@ -1,4 +1,5 @@
 import { binarySearch } from './binarySearch'
+import { describe, it, expect } from 'bun:test'
 
 describe('binarySearch(values:any[])(target:string|number, by?:function): object', () => {
   const doubles = Array(1000)

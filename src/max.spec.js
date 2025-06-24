@@ -1,4 +1,5 @@
 import { max } from './max'
+import { describe, it, expect } from 'bun:test'
 
 describe('max([values])', () => {
   it('should return maximum of array of values', () => {

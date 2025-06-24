@@ -1,4 +1,5 @@
 import { range } from './range'
+import { describe, it, expect } from 'bun:test'
 
 describe('range(length: number, options?: object): number[]', () => {
   it('should create an array filled with a range of numbers (e.g. range(3) // [0, 1, 2]', () => {

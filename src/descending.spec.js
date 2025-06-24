@@ -1,4 +1,5 @@
 import { descending } from './descending'
+import { describe, it, expect } from 'bun:test'
 
 describe('descending(a,b)', () => {
   it('should return an descending sort function: e.g. values.sort(descending)', () => {

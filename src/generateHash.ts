@@ -1,7 +1,20 @@
 import { randomItem } from './randomItem'
 
+export type GenerateHashOptions = {
+  ambiguous?: boolean
+  lower?: string
+  upper?: string
+  numeric?: string
+  alpha?: string
+  symbols?: string
+  startWithLetter?: boolean
+  all?: string
+  only?: string
+  prefix?: string
+}
+
 // creates a hash of length (length).
-export const generateHash = (length = 6, options = {}) => {
+export const generateHash = (length = 6, options: GenerateHashOptions = {}) => {
   let {
     ambiguous = true,
     lower = 'abcdefghijkmnopqrstuvwxyz' + (ambiguous ? 'l' : ''),

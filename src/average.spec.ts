@@ -1,4 +1,5 @@
 import { average } from './average'
+import { describe, it, expect } from 'bun:test'
 
 describe('average([values])', () => {
   it('should average an array of values', () => {

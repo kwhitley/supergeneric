@@ -1,4 +1,5 @@
 import { sum } from './sum'
+import { describe, it, expect } from 'bun:test'
 
 describe('sum([values])', () => {
   it('should add an array of values', () => {

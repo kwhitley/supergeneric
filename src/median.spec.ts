@@ -1,5 +1,6 @@
 import { median } from './median'
 import { sortBy } from './sortBy'
+import { describe, it, expect } from 'bun:test'
 
 describe('median(items: any[], sortBy?: function): any', () => {
   it('should return median of array of values', () => {

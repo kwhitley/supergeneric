@@ -1,5 +1,6 @@
 import { average } from './average'
 import { mean } from './mean'
+import { describe, it, expect } from 'bun:test'
 
 describe('mean(values: number[]): number', () => {
   it('should be equivalent to average(values)', () => {

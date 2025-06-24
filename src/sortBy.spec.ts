@@ -1,4 +1,5 @@
 import { sortBy } from './sortBy'
+import { describe, it, expect } from 'bun:test'
 
 describe('sortBy(key: string|function, options)', () => {
   let items = [
