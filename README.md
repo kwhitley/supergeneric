@@ -1,6 +1,10 @@
 # supergeneric
 
-[![npm version](https://badge.fury.io/js/supergeneric.svg)](https://www.npmjs.com/package/supergeneric)
+[![Version](https://img.shields.io/npm/v/supergeneric.svg?style=flat-square)](https://npmjs.com/package/supergeneric)
+[![Bundle Size](https://deno.bundlejs.com/?q=supergeneric&badge&badge-style=flat-square)](https://deno.bundlejs.com/?q=supergeneric)
+[![Coverage Status](https://img.shields.io/coveralls/github/kwhitley/supergeneric?style=flat-square)](https://coveralls.io/github/kwhitley/supergeneric)
+[![Issues](https://img.shields.io/github/issues/kwhitley/supergeneric?style=flat-square)](https://github.com/kwhitley/supergeneric/issues)
+[![Discord](https://img.shields.io/discord/832353585802903572?label=Discord&logo=Discord&style=flat-square&logoColor=fff)](https://discord.gg/53vyrZAu9u)
 
 A collection of lightweight, tree-shakable TypeScript utility functions for mathematical operations, array manipulation, object handling, and more. Designed for modern JavaScript/TypeScript projects with full type safety.
 
