@@ -2,18 +2,18 @@ name: lint
 
 on:
   push:
-    branches: [v1.x]
+    branches: [v4.x, main]
   pull_request:
-    branches: [v1.x]
+    branches: [v4.x, main]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2.0.1
-      - name: install dependencies
+      - name: Install dependencies
         run: bun install
-      - name: lint
+      - name: Lint code
         run: bun run lint
