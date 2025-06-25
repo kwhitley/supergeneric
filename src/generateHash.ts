@@ -41,11 +41,15 @@ export const generateHash = (length = 6, options: GenerateHashOptions = {}) => {
   if (only === '') throw new Error('Character set cannot be empty')
   if (!only && !allSet) throw new Error('Character set cannot be empty')
 
-  let set = only || (startWithLetter ? alphaSet || allSet : allSet)
+  const finalSet = only || allSet
+  let set = finalSet
+  if (!only && startWithLetter && !all && alphaSet) {
+    set = alphaSet
+  }
   if (!set) throw new Error('Character set cannot be empty')
 
   let result = prefix + randomItem(set)
-  set = only || allSet
+  set = finalSet
 
   for (let i = 1; i < length; i++) {
     result += randomItem(set)
