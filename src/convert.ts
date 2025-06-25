@@ -1,6 +1,8 @@
 import { recurse } from './recurse'
 
-export const convert = (data: any, ...fns: Function[]): any => {
+type AnyFunction = (...args: any[]) => any
+
+export const convert = (data: any, ...fns: AnyFunction[]): any => {
   fns.forEach(fn => {
     data = recurse(fn)(data)
   })

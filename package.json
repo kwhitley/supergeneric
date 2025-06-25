@@ -3,11 +3,12 @@
   "version": "3.0.1",
   "scripts": {
     "dev": "bun test --watch --coverage",
+    "clean": "rimraf dist coverage/* && mkdir dist",
     "lint": "bun eslint src",
     "verify": "echo 'verifying module...' && bun run build && bun test",
     "prerelease": "bun run verify",
     "prerelease:next": "bun run verify",
-    "prebuild": "rimraf dist && mkdir dist",
+    "prebuild": "bun run clean",
     "build": "rollup -c",
     "release": "release --tag --push --patch --src=dist",
     "release:next": "release --tag --push --type=next --src=dist"
@@ -95,11 +96,6 @@
       "import": "./generateHash.mjs",
       "require": "./generateHash.js",
       "types": "./generateHash.d.ts"
-    },
-    "./getMilliseconds": {
-      "import": "./getMilliseconds.mjs",
-      "require": "./getMilliseconds.js",
-      "types": "./getMilliseconds.d.ts"
     },
     "./last": {
       "import": "./last.mjs",

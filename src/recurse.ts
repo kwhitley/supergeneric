@@ -1,4 +1,6 @@
-export const recurse = (fn: Function) => (data: any): any => {
+type AnyFunction = (...args: any[]) => any
+
+export const recurse = (fn: AnyFunction) => (data: any): any => {
   if (data.length) {
     return data.map(recurse(fn))
   }
