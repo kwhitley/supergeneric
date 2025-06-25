@@ -16,7 +16,8 @@ export const binarySearch = <T>(values: T[] = required('must include values'), b
 
       if (value === target) return { item: values[midpoint], index: midpoint }
 
-      value > target ? upper = midpoint : lower = midpoint
+      if (value > target) upper = midpoint
+      else lower = midpoint
 
       iterations++
     }
