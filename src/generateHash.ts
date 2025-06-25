@@ -15,26 +15,25 @@ export type GenerateHashOptions = {
 
 // creates a hash of length (length).
 export const generateHash = (length = 6, options: GenerateHashOptions = {}) => {
-  let {
+  const {
     ambiguous = true,
     lower = 'abcdefghijkmnopqrstuvwxyz' + (ambiguous ? 'l' : ''),
     upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ' + (ambiguous ? 'IO' : ''),
     numeric = '123456789' + (ambiguous ? '0' : ''),
-    alpha = (lower || '') + (upper || ''),
+    alpha = lower + upper,
     symbols = '',
     startWithLetter = true,
-    all = (alpha || '') + (numeric || '') + (symbols || ''),
+    all = alpha + numeric + symbols,
     only = undefined,
     prefix = '',
   } = options
 
   let set = only || (startWithLetter ? alpha || all : all)
+  let result = prefix
 
-  prefix += randomItem(set)
+  result += randomItem(set)
   set = only ?? all
-  while (--length) {
-    prefix += randomItem(set)
-  }
+  while (--length) result += randomItem(set)
 
-  return prefix
+  return result
 }

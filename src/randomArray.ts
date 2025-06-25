@@ -2,6 +2,4 @@
 export const randomArray = (
   length = 1,
   fn = () => Math.random(),
-) => Array(length)
-      .fill(0)
-      .map(fn)
+) => Array(length).fill(0).map(fn)
