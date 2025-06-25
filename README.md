@@ -21,17 +21,64 @@ import { sum } from 'supergeneric/sum'
 import { sortBy } from 'supergeneric/sortBy'
 ```
 
-## Migrating from v1.x to v2.x
+# Migrating from v3.x to v4.x
 
-Previously, functions were grouped into collections. All functions are now named exports from the base module.
+Version 4.x includes several breaking changes and optimizations:
 
-```js
-// v1.x
-import { sum } from 'supergeneric/math'
+### 🗑️ Removed Functions
 
-// v2.x+
-import { sum } from 'supergeneric'
+- **`getMilliseconds()`** - Duration string parsing function has been removed
+- **`console`** - Color-injected console object has been removed
+
+### ⚡ Performance Improvements
+
+- **`min()` and `max()`** - No longer use spread operator (`Math.min(...values)`), now use optimized loops
+  - **Why**: Fixes "Maximum call stack size exceeded" errors on large arrays (>100k elements)
+  - **Impact**: More reliable for large datasets, slightly larger bundle size (+30B gzipped each)
+  - **Migration**: No code changes needed, functions work identically but handle large arrays better
+
+### 🔧 API Changes
+
+- **`min()` and `max()`** - Now handle empty arrays consistently with other math functions
+  - **Before**: `min([])` would return `Infinity`, `max([])` would return `-Infinity`
+  - **After**: `min([])` and `max([])` return `undefined` (following the same pattern as `first()` and `last()`)
+
+### 📦 Bundle Size Optimizations
+
+- Code-golfed optimizations applied across all functions for smaller bundle sizes
+- Bitwise operations used where appropriate (`>>` instead of `Math.floor`, `&` instead of `%`)
+- Eliminated unnecessary intermediate variables and redundant operations
+
+### 🎯 Migration Guide
+
+**If you were using removed functions:**
+
+```typescript
+// v3.x - REMOVED in v4.x
+import { getMilliseconds, console } from 'supergeneric'
+
+// v4.x - Use alternatives
+// For getMilliseconds: Use a dedicated duration parsing library like 'itty-time' or 'ms'
+import ms from 'itty-time'
+ms('1 hour') // 3600000
+
+// For colored console: Use libraries like 'chalk' or 'kleur'
+import chalk from 'chalk'
+console.log(chalk.blue('Hello'))
 ```
+
+**For large array handling (automatic improvement):**
+
+```typescript
+// v3.x - Could fail on large arrays
+const largeArray = Array(200000).fill(0).map((_, i) => i)
+min(largeArray) // RangeError: Maximum call stack size exceeded
+
+// v4.x - Works reliably
+min(largeArray) // 0 (no errors)
+```
+
+All other functions remain backward compatible with the same APIs.
 
 # API Reference
 
