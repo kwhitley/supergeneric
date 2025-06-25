@@ -2,15 +2,16 @@
   "name": "supergeneric",
   "version": "3.0.1",
   "scripts": {
-    "lint": "npx eslint src",
-    "test": "yarn lint && jest --verbose --coverage src",
-    "verify": "echo 'verifying module...' && yarn build && yarn test",
-    "dev": "yarn lint && jest --verbose --watch src",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "prerelease": "yarn verify",
-    "prebuild": "rimraf dist",
-    "build": "rm -fr dist/* && tsc -p tsconfig.json",
-    "release": "release --tag --push --src=dist"
+    "dev": "bun test --watch --coverage",
+    "clean": "rimraf dist coverage/* && mkdir dist",
+    "lint": "bun eslint src",
+    "verify": "echo 'verifying module...' && bun run build && bun test",
+    "prerelease": "bun run verify",
+    "prerelease:next": "bun run verify",
+    "prebuild": "bun run clean",
+    "build": "rollup -c",
+    "release": "release --tag --push --patch --src=dist",
+    "release:next": "release --tag --push --type=next --src=dist"
   },
   "description": "Supergeneric JS helper functions... formatters, math functions, sort functions, etc.",
   "main": "index.js",
@@ -37,20 +38,174 @@
     "email": "krwhitley@gmail.com"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.0",
-    "babel-jest": "^27.3.1",
-    "coveralls": "^3.1.1",
+    "@eslint/eslintrc": "^3.3.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.3",
+    "@types/bun": "^1.2.17",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
     "eslint": "^8.1.0",
-    "eslint-plugin-jest": "^25.2.2",
-    "jest": "^27.3.1",
-    "terser": "^5.9.0",
-    "terser-folder": "^2.0.0",
-    "typescript": "^4.4.4",
+    "fs-extra": "^11.3.0",
+    "rollup": "^4.44.0",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "typescript": "^5.0.0",
     "yarn-release": "^1.10.3"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./ascending": {
+      "import": "./ascending.mjs",
+      "require": "./ascending.js",
+      "types": "./ascending.d.ts"
+    },
+    "./average": {
+      "import": "./average.mjs",
+      "require": "./average.js",
+      "types": "./average.d.ts"
+    },
+    "./binarySearch": {
+      "import": "./binarySearch.mjs",
+      "require": "./binarySearch.js",
+      "types": "./binarySearch.d.ts"
+    },
+    "./convert": {
+      "import": "./convert.mjs",
+      "require": "./convert.js",
+      "types": "./convert.d.ts"
+    },
+    "./dates": {
+      "import": "./dates.mjs",
+      "require": "./dates.js",
+      "types": "./dates.d.ts"
+    },
+    "./descending": {
+      "import": "./descending.mjs",
+      "require": "./descending.js",
+      "types": "./descending.d.ts"
+    },
+    "./first": {
+      "import": "./first.mjs",
+      "require": "./first.js",
+      "types": "./first.d.ts"
+    },
+    "./generateHash": {
+      "import": "./generateHash.mjs",
+      "require": "./generateHash.js",
+      "types": "./generateHash.d.ts"
+    },
+    "./last": {
+      "import": "./last.mjs",
+      "require": "./last.js",
+      "types": "./last.d.ts"
+    },
+    "./makePath": {
+      "import": "./makePath.mjs",
+      "require": "./makePath.js",
+      "types": "./makePath.d.ts"
+    },
+    "./max": {
+      "import": "./max.mjs",
+      "require": "./max.js",
+      "types": "./max.d.ts"
+    },
+    "./mean": {
+      "import": "./mean.mjs",
+      "require": "./mean.js",
+      "types": "./mean.d.ts"
+    },
+    "./median": {
+      "import": "./median.mjs",
+      "require": "./median.js",
+      "types": "./median.d.ts"
+    },
+    "./merge": {
+      "import": "./merge.mjs",
+      "require": "./merge.js",
+      "types": "./merge.d.ts"
+    },
+    "./mergeClean": {
+      "import": "./mergeClean.mjs",
+      "require": "./mergeClean.js",
+      "types": "./mergeClean.d.ts"
+    },
+    "./min": {
+      "import": "./min.mjs",
+      "require": "./min.js",
+      "types": "./min.d.ts"
+    },
+    "./numbers": {
+      "import": "./numbers.mjs",
+      "require": "./numbers.js",
+      "types": "./numbers.d.ts"
+    },
+    "./onlyNumbers": {
+      "import": "./onlyNumbers.mjs",
+      "require": "./onlyNumbers.js",
+      "types": "./onlyNumbers.d.ts"
+    },
+    "./random": {
+      "import": "./random.mjs",
+      "require": "./random.js",
+      "types": "./random.d.ts"
+    },
+    "./randomArray": {
+      "import": "./randomArray.mjs",
+      "require": "./randomArray.js",
+      "types": "./randomArray.d.ts"
+    },
+    "./randomItem": {
+      "import": "./randomItem.mjs",
+      "require": "./randomItem.js",
+      "types": "./randomItem.d.ts"
+    },
+    "./range": {
+      "import": "./range.mjs",
+      "require": "./range.js",
+      "types": "./range.d.ts"
+    },
+    "./recurse": {
+      "import": "./recurse.mjs",
+      "require": "./recurse.js",
+      "types": "./recurse.d.ts"
+    },
+    "./required": {
+      "import": "./required.mjs",
+      "require": "./required.js",
+      "types": "./required.d.ts"
+    },
+    "./round": {
+      "import": "./round.mjs",
+      "require": "./round.js",
+      "types": "./round.d.ts"
+    },
+    "./rounder": {
+      "import": "./rounder.mjs",
+      "require": "./rounder.js",
+      "types": "./rounder.d.ts"
+    },
+    "./sortBy": {
+      "import": "./sortBy.mjs",
+      "require": "./sortBy.js",
+      "types": "./sortBy.d.ts"
+    },
+    "./stddev": {
+      "import": "./stddev.mjs",
+      "require": "./stddev.js",
+      "types": "./stddev.d.ts"
+    },
+    "./sum": {
+      "import": "./sum.mjs",
+      "require": "./sum.js",
+      "types": "./sum.d.ts"
+    },
+    "./transpose": {
+      "import": "./transpose.mjs",
+      "require": "./transpose.js",
+      "types": "./transpose.d.ts"
     }
   }
 }
