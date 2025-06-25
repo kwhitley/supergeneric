@@ -12,14 +12,9 @@ export const binarySearch = <T>(values: T[] = required('must include values'), b
     let iterations = 0
 
     while (iterations < MAX_ITERATIONS && (midpoint = lower + ((upper - lower) >> 1))) {
-      const value = by
-                  ? by(values[midpoint])
-                  : values[midpoint]
+      const value = by ? by(values[midpoint]) : values[midpoint]
 
-      if (value === target) return {
-        item: values[midpoint],
-        index: midpoint,
-      }
+      if (value === target) return { item: values[midpoint], index: midpoint }
 
       if (value > target) {
         upper = midpoint // shift upper bound to midpoint

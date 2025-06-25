@@ -18,6 +18,6 @@ export function sortBy<T>(
   const more = -less
 
   return typeof key === 'function'
-    ? (a: T, b: T) => (key(a) < key(b) ? less : more)
-    : (a: T, b: T) => (a[key] < b[key] ? less : more)
+    ? (a: T, b: T) => key(a) < key(b) ? less : more
+    : (a: T, b: T) => a[key] < b[key] ? less : more
 }

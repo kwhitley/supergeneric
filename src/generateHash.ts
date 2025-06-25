@@ -28,10 +28,11 @@ export const generateHash = (length = 6, options: GenerateHashOptions = {}) => {
     prefix = '',
   } = options
 
-  let set = only || (startWithLetter ? (alpha ? alpha : all) : all)
+  let set = only || (startWithLetter ? alpha || all : all)
 
-  for (let i=0; i<length; i++) {
-    if (i===1) set = only ?? all
+  prefix += randomItem(set)
+  set = only ?? all
+  while (--length) {
     prefix += randomItem(set)
   }
 

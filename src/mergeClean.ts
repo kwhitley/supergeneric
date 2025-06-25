@@ -8,7 +8,7 @@ export const mergeClean = (...objs: object[]): object => {
     const value = merged[key]
 
     if (value === undefined) {
-      Reflect.deleteProperty(merged, key)
+      delete merged[key]
     }
   }
 
