@@ -1,6 +1,6 @@
 {
   "name": "supergeneric",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "scripts": {
     "dev": "bun test --watch --coverage",
     "clean": "rimraf dist coverage/* && mkdir dist",
